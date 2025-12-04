@@ -1,0 +1,1 @@
+console.log("Hola mundo c4 desde un archivo externo")
