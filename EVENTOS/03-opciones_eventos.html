@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>OPCIONES EVENTOS</H1>
+    <button>Saludar</button>
+    <button>Remover Evento</button>
+
+    <script>
+        const boton1 = document.querySelectorAll("button")[0];
+        const boton2 = document.querySelectorAll("button")[1];
+        boton1.addEventListener("click" , () => alert("Boton cliqueado"), {once: true});
+        function mensaje () {
+            alert("este mensaje solo aparece una vez por que se remueve");
+            boton2.removeEventListener("click", mensaje);
+        }
+        boton2.addEventListener("click" , mensaje);
+
+
+    </script>
+</body>
+</html>

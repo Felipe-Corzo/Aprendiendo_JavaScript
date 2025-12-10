@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: antiquewhite;
+    }
+    div {
+        background-color: burlywood;
+        width: 40%;
+        height: 100px;
+        text-align: center;
+    }
+    span {
+        background-color: chocolate;
+        padding: 20px;
+        margin: 10px auto;
+        display: block;
+        width: 100px;
+        text-align: center;
+    }
+    i {
+        background-color: coral;
+        display: inline-block;
+        padding: 5px;
+        text-align: left;
+    }
+    
+</style>
+<body>
+    <div>
+        <div>
+            <span>
+                <button>
+                        Click aqui
+                </button>
+            </span>
+            <i></i>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector("button").addEventListener("click" , e => { e.stopPropagation();
+            document.querySelector("i").textContent=`Cliqueaste en ${e.target.nodeName}`;
+        setTimeout(()=> document.querySelector("i").textContent="",3000);});
+
+
+        document.querySelector("span").addEventListener("click" , e => alert("cliqueaste en span"));
+        document.querySelector("div").addEventListener("click" , e => alert("cliqueaste en div"));
+        document.body.addEventListener("click" , e => alert("cliqueaste en body"));
+    </script>
+
+</body>
+</html>
