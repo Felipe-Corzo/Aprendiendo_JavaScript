@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style id="estilos"></style>
+</head>
+<body>
+    <h1>guardar objetos con local storage</h1>
+    <hr>
+    <button>Guardar info</button>
+    <button>Recuperar info</button>
+    <button>Recorrer informacion</button>
+    <button>Cambiar tema</button>
+    <script>
+        const camper = {
+            nombre: "pedro paez",
+            edad: 18,
+            genero:"masculino",
+            profesion:"estudiante",
+            modulos: []
+        };
+
+        camper.modulos.push({
+            nombre:"python",
+            score : 90
+        });
+
+        camper.modulos.push({
+            nombre:"javaScript",
+            score : 85
+        });
+
+        camper.modulos.push({
+            nombre:"Git",
+            score : 98
+        });
+
+        const campers = [camper, camper, camper];
+
+        
+
+        const btnGuardar = document.getElementsByTagName("button")[0];
+        const btnRecuperar = document.getElementsByTagName("button")[1];
+        const btnIterar = document.getElementsByTagName("button")[2];
+        const btnTema = document.getElementsByTagName("button")[3];
+
+
+        btnGuardar.addEventListener("click", () =>{
+        localStorage.setItem("campers", JSON.stringify(campers));
+        alert("Guardado exitosamente")});
+
+        btnRecuperar.addEventListener("click", () => {
+            const strCampers = localStorage.getItem("campers")
+            alert("Datos recuperados");
+            console.log(strCampers)
+
+            const  objCamper = JSON.parse(strCampers);
+            console.table(objCamper)
+        });
+
+        btnIterar.addEventListener("click", () =>{
+        const strCampers = localStorage.getItem("campers");
+        const objCamper= JSON.parse(strCampers)});
+
+        // iteracion segura
+        Object.keys(campers).forEach(llave => {
+            console.log(llave, "-->" , campers[llave]);
+        });
+
+
+        btnTema.addEventListener("click", (e) =>{
+            const temaActual = localStorage.getItem("tema") || "oscuro";
+            const estilos = temaActual === "oscuro" ?
+                "body { backgraund: # 121212; color: fff ; }" :
+                "body { backgraund: # fff; color: #000 ; }"
+        document.getElementById("estilos").textContent= estilos;
+
+        const nuevoTema = temaActual === "claro" ? "oscuro" : "claro";
+        localStorage.setItem("tema", nuevoTema);
+        //location.reload();
+        });
+    </script>
+</body>
+</html>
