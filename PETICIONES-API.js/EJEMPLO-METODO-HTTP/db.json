@@ -6,8 +6,16 @@
       "edad": 25,
       "sexo": "masculino",
       "modulos": [
-        { "id": 1, "nombre": "Java Fundamentals", "puntaje": 85 },
-        { "id": 2, "nombre": "Spring Boot", "puntaje": 90 }
+        {
+          "id": 1,
+          "nombre": "Java Fundamentals",
+          "puntaje": 85
+        },
+        {
+          "id": 2,
+          "nombre": "Spring Boot",
+          "puntaje": 90
+        }
       ]
     },
     {
@@ -15,7 +23,44 @@
       "nombre": "María López",
       "edad": 23,
       "sexo": "femenino",
-      "modulos": [{ "id": 1, "nombre": "Java Fundamentals", "puntaje": 92 }]
+      "modulos": [
+        {
+          "id": 1,
+          "nombre": "Java Fundamentals",
+          "puntaje": 92
+        }
+      ]
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "nombre": "felipe",
+      "edad": "25",
+      "sexo": "masculino",
+      "modulos": [
+        {
+          "id": 1,
+          "nombre": "JAVA",
+          "puntaje": 89
+        }
+      ],
+      "id": 9
     }
   ]
 }
